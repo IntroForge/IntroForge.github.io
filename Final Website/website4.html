@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntroForge - Empowering Students through Smarter Networking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne+Mono&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --color-1: #536C7C;
+            --color-2: #7B949C;
+            --color-3: #536C7C;
+            --color-4: #213C4E;
+            --color-5: #182241;
+            --color-6: #FFF5D9;
+        }
+
+        body {
+            font-family: 'Syne Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-5);
+            color: var(--color-2);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .logo,
+        .nav-links a {
+            font-family: 'Space Mono', monospace;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--color-1);
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-6);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 40px;
+            /* Adjust this value to match your logo's height */
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-6);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .nav-links a {
+            color: var(--color-6);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--color-1);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: var(--color-1);
+            color: var(--color-6);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-2);
+        }
+
+        .section {
+            padding: 80px 0;
+            color: var(--color-6);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color-1);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--color-4);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-item img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 150px;
+            /* Adjust this value as needed */
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--color-1);
+            min-height: 2.5em;
+            /* Adjust this value as needed */
+        }
+
+        .feature-item p {
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .problem-solution {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .problem,
+        .solution {
+            flex-basis: 48%;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--color-1);
+        }
+
+        .waitlist {
+            text-align: center;
+        }
+
+        .waitlist-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .waitlist-form input[type="text"],
+        .waitlist-form input[type="email"],
+        .waitlist-form textarea {
+            width: 300px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid var(--color-1);
+            background-color: var(--color-6);
+            color: var(--color-5);
+            border-radius: 4px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .waitlist-form button {
+            background-color: var(--color-1);
+            color: var(--color-6);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .waitlist-form button:hover {
+            background-color: var(--color-2);
+        }
+
+        .creator-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .creator-item {
+            text-align: center;
+        }
+
+        .creator-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: var(--color-4);
+            text-align: center;
+            padding: 20px 0;
+            color: var(--color-6);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 600ms;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="logo2.png" alt="IntroForge Logo" class="logo-image">
+                    <span class="logo-text">IntroForge</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#about" class="animate-fade-in">About</a>
+                    <a href="#features" class="animate-fade-in">Features</a>
+                    <a href="#problem-solution" class="animate-fade-in">Problem & Solution</a>
+                    <a href="#faq" class="animate-fade-in">FAQ</a>
+                    <a href="#waitlist" class="animate-fade-in">Join Waitlist</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate-fade-in">Empowering Students through Smarter Networking</h1>
+            <p class="animate-fade-in">IntroForge helps students and young professionals streamline their cold outreach
+                and build meaningful networks.</p>
+            <button class="cta-button animate-fade-in">Join Our Waitlist</button>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About IntroForge</h2>
+            <p class="about-text">At IntroForge, we believe that the best opportunities are often just one meaningful
+                introduction away. We started IntroForge because we've experienced these challenges firsthand—and we
+                knew there had to be a better way.</p>
+            <p class="about-text">Our mission is simple: To empower students and young professionals to build meaningful
+                networks through optimized cold outreach, so they can unlock career opportunities early and confidently.
+            </p>
+            <p class="about-text">We envision a world where every student, regardless of background or network, can
+                access opportunities through intentional and effective connections.</p>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="mail.png" alt="Optimized Cold Outreach">
+                    <br>
+                    <h3>Optimized Cold Outreach</h3>
+                    <br>
+                    <p>Automates email personalization, helping users identify mutual connections and structure
+                        forwardable emails.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="networking.png" alt="Networking as a Resource">
+                    <h3>Networking as a Resource</h3>
+                    <br style="margin-bottom:240px;"/>
+                    <p>A reliable platform for students to connect with mentors, recruiters, and alumni—not just for job
+                        opportunities but for meaningful engagement.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="scaling.png" alt="Scaling Connections">
+                    <br>
+                    <h3>Scaling Connections</h3>
+                    <br style="margin-bottom:240px;"/>
+                    <p>With a phased approach, we start by serving students and then expand to support young
+                        professionals and start-up founders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem-solution" class="section">
+        <div class="container">
+            <h2 class="section-title">The Problem We're Solving</h2>
+            <div class="problem-solution">
+                <div class="problem">
+                    <h3>The Problem</h3>
+                    <ul>
+                        <li class="problem-item">Time-Consuming Cold Outreach: Identifying mutual connections, crafting
+                            forwardable emails, and securing introductions takes significant time and effort.</li>
+                        <li class="problem-item">Lack of Student-Focused Networking Tools: Professional tools like
+                            Apollo.io exist, but students lack platforms tailored to their unique networking needs.</li>
+                        <li class="problem-item">Missed Opportunities: Without effective outreach strategies, students
+                            often fail to connect with professionals early, missing out on valuable career-building
+                            experiences.</li>
+                    </ul>
+                </div>
+                <div class="solution">
+                    <h3>Our Solution</h3>
+                    <ul>
+                        <li class="solution-item">Optimized Cold Outreach: Automates email personalization, helping
+                            users identify mutual connections and structure forwardable emails.</li>
+                        <li class="solution-item">Networking as a Resource: A reliable platform for students to connect
+                            with mentors, recruiters, and alumni—not just for job opportunities but for meaningful
+                            engagement.</li>
+                        <li class="solution-item">Scaling Connections: With a phased approach, we start by serving
+                            students and then expand to support young professionals and start-up founders.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <p class="faq-question">Q: How is IntroForge different from LinkedIn?</p>
+                <p>A: IntroForge focuses on student-friendly networking and automates cold outreach to make the process
+                    seamless and effective. LinkedIn is more geared toward mid- to senior-level professionals.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: How will IntroForge ensure data privacy?</p>
+                <p>A: We use OAuth authentication and comply with GDPR standards to keep user data safe.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Is IntroForge free?</p>
+                <p>A: Yes! IntroForge is free during our pilot phase. Future versions may introduce premium features,
+                    but the core product will ALWAYS be FREE to students.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Do I need any experience to use IntroForge?</p>
+                <p>A: No experience necessary! We designed IntroForge to be user-friendly and accessible for anyone
+                    looking to grow their network.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="waitlist" class="section waitlist">
+        <div class="container">
+            <h2>Join Our Waitlist</h2>
+            <p>Be the first to know when we launch!</p>
+            <form class="waitlist-form" action="https://formspree.io/f/xgvevyev" method="POST">
+                <input type="text" name="name" placeholder="Enter your Name" required>
+                <input type="email" name="email" placeholder="Enter your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Join Waitlist</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="creators" class="section">
+        <div class="container">
+            <h2 class="section-title">About the Creators</h2>
+            <div class="creator-grid">
+                <div class="creator-item">
+                    <img src="raj.png" alt="Raj Krishnamurthy" class="creator-image">
+                    <h3>Raj Krishnamurthy</h3>
+                    <p>Co-founder</p>
+                    <p>Raj is a second-year student at the University of North Carolina at Chapel Hill pursuing a degree
+                        in Business Administration. He is the founder of RK Finances, a stock market information service
+                        that has grossed over six figures in profits, providing strategic investment insights to a
+                        growing subscriber base. With experience in private equity, financial analysis, and investment
+                        banking, Raj has developed strong skills in financial modeling, due diligence, and evaluating
+                        business strategies. In his free time, he enjoys playing soccer, traveling, and collecting rare
+                        coins.</p>
+
+                </div>
+                <div class="creator-item">
+                    <img src="viraj.jpg" alt="Viraj Sharma" class="creator-image">
+                    <h3>Viraj Sharma</h3>
+                    <p>Co-founder</p>
+                    <p>Viraj is a second year computer science student at Georgia Tech, specializing in Intelligence and Systems & Architecture. 
+                        He has completed two software engineering internships, where he honed his skills in backend infrastructure, automation, and database management. 
+                        With a strong interest in machine learning, he is dedicated to leveraging technology to address real-world challenges and continuously expand his 
+                        expertise in programming languages and frameworks. In his free time, he enjoys watching anime, football, and building Legos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 IntroForge. All rights reserved.</p>
+            <p>Contact: introforge@outlook.com</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('.feature-item', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            interval: 200,
+            reset: true
+        });
+        ScrollReveal().reveal('.creator-item', {
+            delay: 200,
+            distance: '50px',
+            origin: 'left',
+            interval: 200,
+            reset: true
+        });
+        ScrollReveal().reveal('.faq-item', {
+            delay: 200,
+            distance: '50px',
+            origin: 'right',
+            interval: 200,
+            reset: true
+        });
+        ScrollReveal().reveal('.problem-item', {
+            delay: 200,
+            distance: '50px',
+            origin: 'left',
+            interval: 200,
+            reset: true
+        });
+        ScrollReveal().reveal('.solution-item', {
+            delay: 200,
+            distance: '50px',
+            origin: 'right',
+            interval: 200,
+            reset: true
+        });
+        ScrollReveal().reveal('.about-text', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            interval: 200,
+            reset: true
+        });
+    </script>
+</body>
+
+</html>
